@@ -195,7 +195,7 @@ int main(int argc, char** argv) {
     if(rank == 0) {
         printf("\nThe execution time is %lf seconds (only the all-to-all personalized communication, excluding all I/O time)\n", total_time);
 
-        printf("Theoretical time complexity = O(%d(ts + %lutw))\n\n", num_proc, (sizeof(int) * num_proc / 2));
+        printf("Theoretical time complexity = O(%d(ts + %lutw))\n\n", num_proc - 1, (sizeof(int) * num_proc / 2));
     }
 
     MPI_Finalize();
